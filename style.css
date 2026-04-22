@@ -12,73 +12,6 @@ body {
     line-height: 1.6;
 }
 
-/* HEADER & NAVBAR */
-header {
-    background: #ffffff;
-    padding: 10px 5%;
-    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: auto;
-}
-
-.logo h1 {
-    font-size: 1.5rem;
-    color: #2c3e50;
-}
-
-.logo h1 span {
-    color: #e67e22;
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-}
-
-.nav-links li {
-    margin: 0 15px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #555;
-    font-weight: 600;
-    transition: 0.3s;
-}
-
-.nav-links a:hover {
-    color: #e67e22;
-}
-
-.cart-wrapper {
-    background: #e67e22;
-    color: white;
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-/* HERO SECTION */
-.hero {
-    background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), 
-                url('https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&q=80&w=1000');
-    background-size: cover;
-    background-position: center;
-    color: #fff;
-    padding: 80px 20px;
-    text-align: center;
-}
-
 /* CONTAINER UTAMA */
 .container {
     padding: 40px 5%;
@@ -117,13 +50,13 @@ header {
     transform: translateY(-5px);
 }
 
-/* PENGATURAN GAMBAR BIAR GAK KEPOTONG */
+/* --- PERBAIKAN PENTING DI SINI --- */
 .product-card img {
     width: 100%;
-    height: 280px; /* Ukuran tinggi kotak gambar */
-    object-fit: contain; /* PENTING: Gambar akan utuh, tidak terpotong */
-    background-color: #fff; /* Warna latar jika gambar punya sisa ruang */
-    padding: 10px; /* Jarak agar gambar tidak nempel ke pinggir kotak */
+    height: 300px; /* Kita perbesar tinggi kotaknya */
+    object-fit: contain; /* PENTING: Gambar akan UTUH, tidak terpotong */
+    background-color: #fff; /* Latar putih untuk mengisi sisa ruang */
+    padding: 15px; /* Jarak agar gambar tidak menempel ke pinggir kotak */
 }
 
 /* INFO PRODUK */
@@ -164,15 +97,6 @@ header {
     background: #e67e22;
 }
 
-/* FOOTER */
-footer {
-    background: #2c3e50;
-    color: #fff;
-    padding: 40px 20px;
-    text-align: center;
-    margin-top: 60px;
-}
-
 /* RESPONSIVE HP */
 @media (max-width: 600px) {
     .product-grid {
@@ -180,6 +104,6 @@ footer {
     }
     
     .product-card img {
-        height: 220px;
+        height: 250px; /* Ukuran tinggi kotak gambar di HP */
     }
 }
