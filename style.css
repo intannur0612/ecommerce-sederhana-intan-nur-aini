@@ -1,19 +1,22 @@
+/* RESET & DASAR */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Arial, sans-serif;
+    font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
 }
 
 body {
-    background-color: #f9f9f9;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
 }
 
-/* HEADER */
+/* HEADER & NAVBAR */
 header {
-    background: #fff;
-    padding: 15px 5%;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    background: #ffffff;
+    padding: 10px 5%;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -23,103 +26,160 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 1200px;
+    margin: auto;
 }
 
-.logo h1 span { color: #e67e22; }
+.logo h1 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+}
 
-.nav-links { display: flex; list-style: none; }
-.nav-links li { margin: 0 15px; }
-.nav-links a { text-decoration: none; color: #333; font-weight: 600; }
+.logo h1 span {
+    color: #e67e22;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #e67e22;
+}
 
 .cart-wrapper {
-    background: #f4f4f4;
+    background: #e67e22;
+    color: white;
     padding: 5px 15px;
     border-radius: 20px;
     font-weight: bold;
+    cursor: pointer;
 }
 
-/* HERO */
+/* HERO SECTION */
 .hero {
-    background: #2c3e50;
+    background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), 
+                url('https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&q=80&w=1000');
+    background-size: cover;
+    background-position: center;
     color: #fff;
-    padding: 60px 20px;
+    padding: 80px 20px;
     text-align: center;
 }
 
-/* GRID 2 KOLOM */
-.container { padding: 30px 5%; max-width: 1200px; margin: auto; }
-.section-title { text-align: center; margin-bottom: 30px; }
+/* CONTAINER UTAMA */
+.container {
+    padding: 40px 5%;
+    max-width: 1100px;
+    margin: auto;
+}
 
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    color: #2c3e50;
+    position: relative;
+}
+
+/* GRID PRODUK (2 KOLOM) */
 .product-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* 2 Kolom */
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
 }
 
 /* CARD PRODUK */
 .product-card {
     background: #fff;
-    border-radius: 12px;
+    border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     display: flex;
     flex-direction: column;
+    transition: transform 0.3s ease;
+    border: 1px solid #eee;
 }
 
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+/* PENGATURAN GAMBAR BIAR GAK KEPOTONG */
 .product-card img {
     width: 100%;
-    height: 250px;
-    object-fit: cover;
+    height: 280px; /* Ukuran tinggi kotak gambar */
+    object-fit: contain; /* PENTING: Gambar akan utuh, tidak terpotong */
+    background-color: #fff; /* Warna latar jika gambar punya sisa ruang */
+    padding: 10px; /* Jarak agar gambar tidak nempel ke pinggir kotak */
 }
 
-/* TULISAN DI TENGAH */
+/* INFO PRODUK */
 .product-info {
-    padding: 15px;
+    padding: 20px;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    flex-grow: 1;
 }
 
 .product-info h3 {
-    font-size: 1rem;
-    min-height: 40px;
-    display: flex;
-    align-items: center;
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 10px;
 }
 
 .price {
     font-weight: bold;
     color: #e67e22;
-    margin: 10px 0;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
 }
 
 .btn-add {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     background: #2c3e50;
     color: #fff;
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
     transition: 0.3s;
 }
 
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #2c3e50;
-    color: #fff;
-    margin-top: 40px;
+.btn-add:hover {
+    background: #e67e22;
 }
 
-/* HP RESPONSIVE */
-@media (max-width: 480px) {
-    .product-card img { height: 180px; }
-    .product-info h3 { font-size: 0.9rem; }
+/* FOOTER */
+footer {
+    background: #2c3e50;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 60px;
+}
+
+/* RESPONSIVE HP */
+@media (max-width: 600px) {
+    .product-grid {
+        grid-template-columns: 1fr; /* Jadi 1 kolom di HP kecil */
+    }
+    
+    .product-card img {
+        height: 220px;
+    }
 }
