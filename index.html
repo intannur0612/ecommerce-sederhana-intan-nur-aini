@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KemejaStore | Katalog Resmi 2026</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -77,18 +78,6 @@
     </main>
 
     <footer id="kontak">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>Hubungi Kami</h4>
-                <p>📞 WA: <a href="https://wa.me/6281234567890">0812-3456-7890</a></p>
-                <p>📧 Email: <a href="mailto:admin@kemejastore.com">admin@kemejastore.com</a></p>
-            </div>
-            <div class="footer-section">
-                <h4>Lokasi</h4>
-                <p>Bandung, Jawa Barat</p>
-                <p>Indonesia</p>
-            </div>
-        </div>
         <div class="footer-bottom">
             <p>&copy; 2026 KemejaStore Official. All Rights Reserved.</p>
         </div>
@@ -103,11 +92,9 @@
             button.addEventListener('click', () => {
                 count++;
                 cartDisplay.innerText = count;
-                
                 const originalText = button.innerText;
                 button.innerText = "Berhasil!";
                 button.style.backgroundColor = "#2ecc71";
-                
                 setTimeout(() => {
                     button.innerText = originalText;
                     button.style.backgroundColor = "";
